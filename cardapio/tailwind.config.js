@@ -5,10 +5,13 @@ module.exports = {
     "./styles/**/*.css",   // escaneia seus arquivos CSS (opcional, mas seguro)
   ],
   theme: {
+    fontFamily: {
+      'sans': ['Roboto', 'sans-serif']
+    },
     extend: {
-      backgroundImage:{
+      backgroundImage: {
         "home": "url('/assets/bg.png')"
-      }  
+      }
     },
   },
   plugins: [],
