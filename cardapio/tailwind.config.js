@@ -1,8 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./**/*.{html,js}"],
+  content: [
+    "./*.html",            // escaneia todos os arquivos HTML na raiz
+    "./styles/**/*.css",   // escaneia seus arquivos CSS (opcional, mas seguro)
+  ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage:{
+        "home": "url('/assets/bg.png')"
+      }  
+    },
   },
   plugins: [],
 }
