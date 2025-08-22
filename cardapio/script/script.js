@@ -146,7 +146,18 @@ contactInput.addEventListener("input", function (event) {
 checkoutBtn.addEventListener("click", function () {
     const isOpen = checkRestaurantOpen();
     if (!isOpen) {
-        alert("Garcia Burguer Fechado no Momento!");
+        //Aviso
+        Toastify({
+            text: "A Garcia Burguer está fechada!",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "#ef4444",
+            },
+        }).showToast();
         return;
     }
 
@@ -155,13 +166,30 @@ checkoutBtn.addEventListener("click", function () {
     if (addressInput.value === "") {
         addressWarn.classList.remove("hidden")
         addressInput.classList.add("border-red-500")
+        return;
     }
 
     if (contactInput.value === "") {
         contactWarn.classList.remove("hidden")
         contactInput.classList.add("border-red-500")
+        return;
     }
-    return;
+
+    //Enviar o pedido para api whats
+    const cartItems = cart.map((item) => {
+        return (
+            ` ${item.name} Quantidade: (${item.quantity}) Preço: R$ ${item.price} /`
+        )
+    }).join("")
+    //Enviar mensagem do pedido em string acima 
+    const message = encodeURIComponent(cartItems)
+    const phone = "44997220216"
+    //Enviar a mensagem do pedido para celular
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value} Fone: ${contactInput.value}`, "_blank")
+    //Limpar o carrinho depois de finalizar o pedido
+    cart = [];
+    updateCartModal();
+    clearinput();
 })
 //Não aceitar pesdido fora do horário
 function checkRestaurantOpen() {
