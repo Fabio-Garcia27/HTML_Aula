@@ -7,14 +7,11 @@ export default async function Apoia({
 }) {
   const { username } = await params;
 
-
-  console.log(username);
-
   return (
     <div className=" min-h-[calc(100vh-64px)]">
       <div className="w-full h-64 relative bg-black">
         <Image
-          src={"https://github.com/devfraga.png"}
+          src={"https://avatars.githubusercontent.com/u/209668624?s=400&u=438b6897cc5f4d59928ede920b834be0a0b5aba7&v=4"}
           alt="Banner"
           fill
           className="object-cover opacity-50"
@@ -26,9 +23,9 @@ export default async function Apoia({
       <section className="flex flex-col w-full items-center justify-center mx-auto max-w-7xl p-4 relative">
         <div className="flex flex-col items-center">
           <Image
-            src={"https://github.com/devfraga.png"}
+            src={"https://avatars.githubusercontent.com/u/209668624?s=400&u=438b6897cc5f4d59928ede920b834be0a0b5aba7&v=4"}
             className="w-36 h-36 rounded-xl bg-gray-50 hover:shadow-lg duration-300 select-none text-zinc-900 text-3xl flex items-center justify-center object-cover absolute -top-16 border-4 border-white"
-            alt="Matheus Fraga"
+            alt="Fábio Garcia"
             width={96}
             height={96}
             quality={100}
