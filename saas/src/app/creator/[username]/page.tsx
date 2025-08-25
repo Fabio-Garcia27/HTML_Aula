@@ -34,7 +34,7 @@ export default async function Apoia({
             quality={100}
           />
           <h1 className=" font-bold text-xl md:text-2xl mt-20 mb-4">
-            Fulano Dev
+            FHG Dev
           </h1>
         </div>
       </section>
@@ -42,10 +42,10 @@ export default async function Apoia({
       <div className="grid grid-cols-1 md:grid-cols-2 w-full mx-auto gap-4 max-w-5xl">
         <section className="hidden md:flex flex-col bg-gray-50 p-5 rounded-md h-fit mx-2">
           <p className="font-semibold text-lg">
-            Sobre Fulano Dev
+            Sobre FHG Dev
           </p>
           <p className="text-gray-500 mt-2">
-            Descrição generica sobre o fulano dev
+            Descrição generica sobre o FHG dev
           </p>
         </section>
 
@@ -53,7 +53,7 @@ export default async function Apoia({
           className="bg-gray-50 rounded-md p-5 h-fit mx-2"
         >
           <h3 className="font-semibold text-lg">
-            Apoie o Matheus Fraga:
+            Apoie o Fábio Garcia:
           </h3>
 
 
