@@ -64,3 +64,6 @@ listaGastos.addEventListener("click", async (e) => {
 });
 
 carregarGastos();
+
+
+

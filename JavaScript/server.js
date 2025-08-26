@@ -36,7 +36,6 @@ app.post("/api/gastos", async (req, res) => {
         res.status(500).json({ erro: "Erro ao salvar gasto!" });
     }
 });
-
 // Listar gastos
 app.get("/api/gastos", async (req, res) => {
     try {
@@ -49,7 +48,6 @@ app.get("/api/gastos", async (req, res) => {
         res.status(500).json({ erro: "Erro ao buscar gastos!" });
     }
 });
-
 // Atualizar gasto
 app.put("/api/gastos/:id", async (req, res) => {
     try {
@@ -88,3 +86,4 @@ app.delete("/api/gastos/:id", async (req, res) => {
 // Rodar servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Servidor rodando em http://localhost:${PORT}`));
+
