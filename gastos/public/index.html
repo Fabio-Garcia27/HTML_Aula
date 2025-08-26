@@ -12,10 +12,9 @@
 
 </head>
 
-<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex items-center justify-center p-4">
-
+<body class="bg-gray-400 min-h-screen flex items-center justify-center p-4">
     <div class="bg-white shadow-lg rounded-2xl p-6 md:p-8 w-full max-w-3xl flex flex-col gap-4">
-        <h1 class="text-3xl font-bold text-center text-blue-800 mb-4">💰 Controle de Gastos</h1>
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-4">💰 Controle de Gastos</h1>
 
         <!-- Formulário -->
         <form id="form-gasto" class="flex flex-col gap-3">
@@ -48,6 +47,14 @@
                 class="bg-blue-600 text-white rounded-lg py-2 font-semibold hover:bg-blue-700 transition-colors">Adicionar
                 Gasto</button>
         </form>
+
+        <form id="form-busca" class="flex gap-2 mb-4">
+            <input id="periodo-busca" type="text" placeholder="Período MM/YYYY"
+                class="w-40 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Buscar</button>
+        </form>
+
+
         <!-- Lista de gastos -->
         <ul id="lista-gastos" class="mt-4 flex flex-col gap-2"></ul>
 
