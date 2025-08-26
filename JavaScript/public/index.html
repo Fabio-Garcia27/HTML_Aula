@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
     <title>Controle de Gastos</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h1 class="text-2xl font-bold mb-4 text-center">Controle de Gastos</h1>
-        <form id="form-gasto" class="flex flex-col gap-2 mb-4">
-            <input id="periodo" type="text" placeholder="Período MM/YYYY" class="border rounded px-3 py-2" required>
-            <input id="descricao" type="text" placeholder="Descrição" class="border rounded px-3 py-2" required>
-            <select id="categoria" class="border rounded px-3 py-2" required>
+
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white shadow-lg rounded-2xl p-6 md:p-8 w-full max-w-lg flex flex-col gap-4">
+        <h1 class="text-3xl font-bold text-center text-blue-800 mb-4">💰 Controle de Gastos</h1>
+
+        <!-- Formulário -->
+        <form id="form-gasto" class="flex flex-col gap-3">
+            <input id="periodo" type="text" placeholder="Período MM/YYYY"
+                class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required>
+            <input id="descricao" type="text" placeholder="Descrição"
+                class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required>
+            <select id="categoria"
+                class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required>
                 <option value="">Selecione a Categoria</option>
                 <option value="Mercado">Alimentação</option>
                 <option value="Combustivel">Combustível</option>
@@ -26,14 +38,30 @@
                 <option value="IPVA">IPVA</option>
                 <option value="Outros">Outros</option>
             </select>
-            <input id="valor" type="number" placeholder="Valor (R$)" class="border rounded px-3 py-2" min="0.01" step="0.01" required>
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Adicionar Gasto</button>
+            <input id="valor" type="number" placeholder="Valor (R$)" min="0.01" step="0.01"
+                class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required>
+            <button type="submit"
+                class="bg-blue-600 text-white rounded-lg py-2 font-semibold hover:bg-blue-700 transition-colors">Adicionar
+                Gasto</button>
         </form>
-        <ul id="lista-gastos" class="mb-4"></ul>
-        <div class="text-right font-semibold">
+
+        <form id="form-busca" class="flex gap-2 mb-4">
+            <input id="periodo-busca" type="text" placeholder="Período MM/YYYY"
+                class="w-40 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Buscar</button>
+        </form>
+
+        <!-- Lista de gastos -->
+        <ul id="lista-gastos" class="mt-4 flex flex-col gap-2"></ul>
+
+        <!-- Total -->
+        <div class="text-right font-bold text-lg text-blue-800">
             Total: R$ <span id="total">0.00</span>
         </div>
     </div>
+
     <script src="./script.js" type="module"></script>
 </body>
+
 </html>
