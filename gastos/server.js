@@ -40,7 +40,7 @@ app.post("/api/gastos", async (req, res) => {
 app.get("/api/gastos", async (req, res) => {
     try {
         const { periodo } = req.query;
-        console.log(periodo)
+
         if (!periodo) return res.json([]);
 
         // trim para remover espaços extras
