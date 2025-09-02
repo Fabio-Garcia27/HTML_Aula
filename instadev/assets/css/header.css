@@ -1,0 +1,39 @@
+header{
+    position: fixed;
+    z-index: 10;
+    inset: 0 0 auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
+    height: 5rem;
+    background-color: var(--background);
+}
+
+header .logo {
+    width: 10rem;
+    height: 3.3rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/logo-black.png);
+    cursor: pointer;
+}
+
+header .icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@media(prefers-color-scheme: dark) {
+    header .logo {
+        background-image: url(../images/logo-white.png);
+    }    
+}
+
+@media (width > 900px) {
+    header {
+        display: none;
+    }
+}
