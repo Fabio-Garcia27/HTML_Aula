@@ -35,7 +35,15 @@ main nav li a {
 }
 
 main nav li a:hover {
-    background-color: var(--secondary-foreground);    
+    background-color: var(--secondary-foreground);
+}
+
+main nav li a.active {
+      font-weight: bold;
+}
+
+main nav li a span {
+    display: none;
 }
 
 main .area {
@@ -89,6 +97,10 @@ main .area aside {
     }
 
     main nav .logo {
+        display: block;
+    }
+
+    main nav li a span {
         display: block;
     }
 }
