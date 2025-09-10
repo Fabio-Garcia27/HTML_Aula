@@ -36,18 +36,18 @@ router.post('/login', async (req, res) => {
 
         //Verifica se o usuário existe
         if (!user) {
-            return res.status(404).json({message: 'Usuário não encontrado'})        
+            return res.status(404).json({ message: 'Usuário não encontrado' })
         }
 
         //Compara as senha do banco com a que o usuário digitou
         const isMatch = await bcrypt.compare(userInfo.password, user.password)
 
         if (!isMatch) {
-            return res.status(400).json({message: 'Senha inválida'})
+            return res.status(400).json({ message: 'Senha inválida' })
         }
 
         //Gerar o Token JWT
-        const token = jwt.sign({id: user.id}, JWT_SECRET, {expiresIn: '1h'})
+        const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '7d' })
         res.status(200).json(token)
 
     } catch (err) {
