@@ -1,7 +1,9 @@
 import express from 'express'
+import cors from 'cors'
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 const users = [{
   name: "Fábio Garcia",
@@ -19,6 +21,11 @@ app.post('/usuarios', (req, res) => {
   users.push(newUser)
 
   res.status(201).json(newUser)
+})
+
+app.delete('/usuarios/:name', (req, res) => {
+  const { name } = req.params
+  // procurar usuário pelo name e deletar
 })
 
 app.listen(3000, () => {
