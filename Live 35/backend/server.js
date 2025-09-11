@@ -5,27 +5,45 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+const usuariosArray = []
+
+/*
 const users = [{
   name: "Fábio Garcia",
   age: 53
 }]
+*/
 
+// GET /usuarios
 app.get('/usuarios', (req, res) => {
-  res.json(users)
+  // deve retornar array
+  res.json(usuariosArray)
 })
 
+// POST /usuarios
 app.post('/usuarios', (req, res) => {
+  const { name, age } = req.body
 
-  const newUser = req.body
+  if (!name || !age) return res.status(400).json({ error: 'Campos obrigatórios' })
 
-  users.push(newUser)
+  const newUser = { id: Date.now(), name, age }
 
-  res.status(201).json(newUser)
+  usuariosArray.push(newUser)
+
+  res.json(newUser) // <- importante enviar resposta
 })
 
-app.delete('/usuarios/:name', (req, res) => {
-  const { name } = req.params
-  // procurar usuário pelo name e deletar
+// DELETE
+app.delete('/usuarios/:id', (req, res) => {
+  const id = parseInt(req.params.id)
+
+  const index = usuariosArray.findIndex(u => u.id === id)
+
+  if (index === -1) return res.status(404).json({ error: 'Usuário não encontrado' })
+
+  usuariosArray.splice(index, 1)
+  
+  res.status(204).send()
 })
 
 app.listen(3000, () => {

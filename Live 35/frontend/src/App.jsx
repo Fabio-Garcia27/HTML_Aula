@@ -27,6 +27,8 @@ function App() {
     api.post('/usuarios', { name, age })
       .then(res => {
         setUsers(prev => [...prev, res.data]) // adiciona usuário retornado pelo backend
+        setName('')  // Limpa campo Nome
+        setAge('')   // Limpa campo Idade
     })
       .catch(err => console.error("Erro ao adicionar usuário:", err))
   }
@@ -45,10 +47,10 @@ function App() {
       <h1 className="text-2xl bg-blue-600 text-white p-4 shadow-md font-bold text-center">Usuários Cadastrados</h1>
       <ul className="text-xl font-bold text-center">
         {users.map((user, index) => (
-          <li key={`${user.name || "user"}-${index}`} className="flex justify-between items-center my-2">
+          <li key={`${user.id || "user"}-${index}`} className="flex justify-between items-center my-2">
             <span>Nome: {user.name} - Idade: {user.age}</span>
             <button
-              onClick={() => deleteUser(user.name)}
+              onClick={() => deleteUser(user.id)}
               className="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600"
             >
               Deletar
@@ -59,11 +61,13 @@ function App() {
       <h2 className="text-2xl bg-blue-600 text-white p-2 shadow-md font-bold text-center">Adicionar Novo Usuário</h2>
       <input
         placeholder='Nome'
+        value={name}
         onChange={(event) => setName(event.target.value)}
         className="px-3 py-2 border border-black shadow-md mb-2 w-full"
       />
       <input
         placeholder='Idade'
+        value={age}
         onChange={(event) => setAge(event.target.value)}
         className="px-3 py-2 border border-black shadow-md mb-2 w-full"
       />
