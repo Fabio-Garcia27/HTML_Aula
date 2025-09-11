@@ -14,8 +14,7 @@ function App() {
 
   // Buscar usuários ao carregar
   useEffect(() => {
-    api.get('/usuarios')
-      .then(res => {
+    api.get('/usuarios').then(res => {
         setUsers(Array.isArray(res.data) ? res.data : res.data.usuarios || [])
       })
       .catch(err => console.error("Erro ao buscar usuários:", err))
@@ -24,8 +23,8 @@ function App() {
   // Adicionar usuário
   function newUser() {
     if (!name || !age) return alert("Preencha todos os campos!")
-    api.post('/usuarios', { name, age })
-      .then(res => {
+
+    api.post('/usuarios', { name, age }).then(res => {
         setUsers(prev => [...prev, res.data]) // adiciona usuário retornado pelo backend
         setName('')  // Limpa campo Nome
         setAge('')   // Limpa campo Idade
@@ -35,8 +34,7 @@ function App() {
 
   // Deletar usuário usando ID único
   function deleteUser(id) {
-    api.delete(`/usuarios/${id}`)
-      .then(() => {
+    api.delete(`/usuarios/${id}`).then(() => {
         setUsers(prev => prev.filter(user => user.id !== id))
       })
       .catch(err => console.error("Erro ao deletar usuário:", err))
