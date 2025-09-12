@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>YouTube</title>
+</head>
+
+<body>
+    <header
+        class="fixed top-0 right-0 left-0 bg-white z-50 px-4 py-2 flex items-center justify-between border-b border-gray-200">
+        <div class="flex items-center gap-4">
+
+            <button class="p-2 hover:bg-gray-100 cursor-pointer">
+                <i class="ri-menu-line text-xl"></i>
+            </button>
+
+            <div class="flex items-center gap-1 cursor-pointer">
+                <i class="ri-youtube-fill text-3xl text-red-600"></i>
+                <span class="text-xl font-semibold">YouTube</span>
+                <span class="text-[10px] text-gray-600">BR</span>
+            </div>
+        </div>
+
+        <form class="flex-1 max-w-2xl mx-4 flex">
+            <input type="text" placeholder="Pesquisar"
+                class="flex-1 px-4 py-2 border border-gray-300 rounded-l-full rounded-r-0">
+            <button class="px-6 py-4 bg-gray-50 border border-l-0 border-gray-300 rounded-r-full">
+                <i class="ri-search-line"></i>
+            </button>
+            <button class="px-6 py-2 bg-gray-100 rounded-full hover:bg-gray-200">
+                <i class="ri-mic-line"></i>
+            </button>
+        </form>
+
+        <div>
+            <button>
+                <i class="ri-video-add-line text-xl"></i>
+            </button>
+            <button>
+                <i class="ri-notification-3-line text-xl"></i>      
+            </button>
+            <button>
+                R 
+            </button>                        
+        </div>
+    </header>
+</body>
+
+</html>
