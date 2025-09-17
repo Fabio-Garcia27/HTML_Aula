@@ -44,10 +44,7 @@ function App() {
       {/* Lista de produtos */}
       <div className="w-full space-y-2">
         {produtos.map((produto) => (
-          <div
-            key={produto.id}
-            className="flex justify-between items-center bg-white rounded shadow px-4 py-2 border border-gray-300"
-          >
+          <div key={produto.id} className="flex justify-between items-center bg-white rounded shadow px-4 py-2 border border-gray-300">
             <p>{produto.nome}</p>
             <button onClick={() => cliqueNoDeletar(produto.id)} className="text-red-600 hover:text-red-800 cursor-pointer">
               <TrashIcon className="w-6 h-6" />
