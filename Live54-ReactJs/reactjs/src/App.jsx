@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="max-w-2xl mx-auto mt-10 bg-gray-100 flex flex-col items-center p-6 border-4 border-gray-400 rounded-md shadow-lg">
-      <h1 className="text-4xl font-bold text-blue-600 mb-6">Lista de Tarefas</h1>
+      <h1 className="text-4xl font-bold text-blue-600 mb-6">Lista de Compras</h1>
 
       {/* Input e botão lado a lado */}
       <div className="flex w-full mb-6 space-x-2">
