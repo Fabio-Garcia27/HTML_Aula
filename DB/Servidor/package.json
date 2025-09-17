@@ -1,0 +1,15 @@
+{
+  "name": "cadastro-usuarios",
+  "version": "1.0.0",
+  "description": "Esse é um projeto de cadastro de usuários com Node + Express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Fábio Garcia",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
