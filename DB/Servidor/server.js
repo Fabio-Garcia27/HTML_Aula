@@ -1,9 +1,12 @@
 import express from 'express'
 import cors from 'cors'
+import { PrismaClient } from '@prisma/client'
 
 const app = express()
+const prisma = new PrismaClient()
 app.use(express.json()) // <-- precisa estar antes das rotas
 app.use(cors())
+
 
 let usuarios = []
 
@@ -37,7 +40,7 @@ app.get('/usuarios/:id', (req, res) => {
   const usuario = usuarios.find(u => u.id === Number(id))
 
   if (!usuario) {
-        return res.status(404).json({ erro: 'Usuário não encontrado' })
+    return res.status(404).json({ erro: 'Usuário não encontrado' })
   }
 
   res.json(usuario)
