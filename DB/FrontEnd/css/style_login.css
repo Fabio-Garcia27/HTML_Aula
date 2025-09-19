@@ -14,9 +14,9 @@ body {
 
 .container {
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
   background: rgba(255, 255, 255, 0.95);
-  padding: 30px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
@@ -29,8 +29,8 @@ h2 {
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 5px;
+  margin-bottom: 5px;
 }
 
 input {
