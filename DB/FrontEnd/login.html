@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style_login.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <label>Email:</label>
+      <input type="email" id="loginEmail" required>
+      
+      <label>Senha:</label>
+      <input type="password" id="loginPassword" required>
+      
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      // ⚠️ Simulação de login (sem backend)
+      if (email === "admin@teste.com" && password === "1234") {
+        // Salva no navegador para "lembrar" que está logado
+        localStorage.setItem("logado", "true");
+
+        // Redireciona para index.html
+        window.location.href = "index.html";
+      } else {
+        alert("Email ou senha inválidos!");
+      }
+    });
+  </script>
+</body>
+</html>

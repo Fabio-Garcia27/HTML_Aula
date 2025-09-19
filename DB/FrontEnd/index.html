@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Cadastro de Usuário</title>
 </head>
 
@@ -27,7 +27,22 @@
         <ul id="userList"></ul>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
+    <script>
+        // Se não estiver logado, volta para login.html
+        if (localStorage.getItem("logado") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <button onclick="logout()">Sair</button>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("logado");
+            window.location.href = "login.html";
+        }
+    </script>
 </body>
 
 </html>
