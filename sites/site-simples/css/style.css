@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Yesteryear&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: white;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e8aae3;
+    height: 80px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 60px;
+    color: white;
+    font-family: "Yesteryear", cursive;
+    font-weight: normal;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 650px;
+    border: 1px solid red;
+}
+
+.box-img {
+    display: flex;
+    width: 35%;
+    height: 600px;
+    border: 1px solid blue;
+}
+
+.box-txt {
+    display: flex;
+    width: 35%;
+    height: 600px;
+    border: 1px solid green;
+}
