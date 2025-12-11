@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Mensagem</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <form action="processar-dados.php" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" placeholder="Digite seu Nome" required>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" placeholder="Digite seu Email" required>
+        <label for="mensagem">Mensagem:</label>
+        <textarea name="mensagem" rows="5" placeholder="Digite sua Mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>    
+</body>
+</html>
