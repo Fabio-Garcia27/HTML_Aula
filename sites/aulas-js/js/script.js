@@ -1,0 +1,1 @@
+document.getElementById("texto").innerHTML="Meu Primeito texto <b>JS</b>!";
