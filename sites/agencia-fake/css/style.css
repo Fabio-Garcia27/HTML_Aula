@@ -115,12 +115,11 @@ body {
 section {
     display: inline-block;
     margin-top: 80px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin-left: 5%;
     margin-right: 5%;
     padding: 5%;
     text-align: center;
-    width: 90%;
 }
 
 section h2 {
@@ -143,4 +142,53 @@ section h2 {
     padding: 20px;
     margin: 1%;
     border: 1px solid #ff2978;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.texto-oculto {
+    display: none;
+}
+
+.card:hover {
+    background: #ff2978;
+    color: white;
+    padding: 40px;
+}
+
+.card:hover img {
+    display: none;
+}
+
+.card:hover .card-text {
+    display: none;
+}
+
+.card:hover .texto-oculto {
+    display: block;
+}
+
+footer {
+    margin-top: 100px;    
+    height: 400px;
+    background-image: linear-gradient(180deg, #180f4a, #090422, black);
+    text-align: center;
+    border-top: 5px solid #ff2978;
+}
+
+.logo-rodape {
+    padding: 100px;
+}
+
+.agencia {
+    font-family: "Lobster", sans-serif;
+    color: white;
+    font-size: 34px;    
+}
+
+.whats {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 50px;
 }
