@@ -7,12 +7,14 @@ function enviarWhats(event) {
 
     const telefone = '5544997220216';
 
-    const texto = `Olá! Me chamo ${nome} e ${mensagem}`;
+    const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
 
     // função que formata o texto para mensagem no Whatsapp que não aceita espaço
     const msgFormatada = encodeURIComponent(texto);
 
     const url = `https://whatsa.me/${telefone}/?t=${msgFormatada}`;
+    // ou esse
+    // const url = `https://wa.me/${telefone}/?text=${msgFormatada}`;
 
     window.open(url, '_blank');
 }
