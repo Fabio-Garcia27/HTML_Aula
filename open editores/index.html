@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Slider com HTML e CSS</title>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <!--Radio Buttons-->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <!--Fim Radio Buttons-->
+            <!--Slide images-->
+            <div class="slide first">
+                <img src="https://sujeitoprogramador.com/wp-content/uploads/2021/03/thumb-video.png" alt="imagem1">
+            </div>
+            <div class="slide">
+                <img src="https://sujeitoprogramador.com/wp-content/uploads/2021/09/thumb.png" alt="imagem2">
+            </div>
+            <div class="slide">
+                <img src="https://sujeitoprogramador.com/wp-content/uploads/2021/09/thumb.png" alt="imagem3">
+            </div>
+            <div class="slide">
+                <img src="https://sujeitoprogramador.com/wp-content/uploads/2018/12/qualpc.png" alt="imagem4">
+            </div>
+            <!--Fim Slide images-->
+            <!--Navegation auto-->
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+        </div>
+        <div class="manual-navigation">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
