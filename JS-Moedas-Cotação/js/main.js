@@ -1,4 +1,4 @@
-import { buscarPrecos } from '../api.js';
+import { buscarCriptos, buscarCambio } from '../api.js';
 import { formatarPreco, filtrarMoedas } from './calculos.js';
 
 let moedas = [];
@@ -14,17 +14,20 @@ function renderizar(lista) {
 
 async function atualizar() {
     try {
-        const dados = await buscarPrecos();
+        const [criptos, cambio] = await Promise.all([
+            buscarCriptos(),
+            buscarCambio()
+        ]);
 
-        //console.log(dados); // 👈 ESSENCIAL
-
-        moedas = [
-            { nome: 'bitcoin', preco: dados.bitcoin?.brl ?? 0 },
-            { nome: 'ethereum', preco: dados.ethereum?.brl ?? 0 },
-            { nome: 'cardano', preco: dados.cardano?.brl ?? 0 },
-            { nome: 'dogecoin', preco: dados.dogecoin?.brl ?? 0 },
-            { nome: 'litecoin', preco: dados.litecoin?.brl ?? 0 },
-            { nome: 'dólar', preco: dados.usd?.brl ?? 0 }         
+        const moedas = [
+            { nome: 'Bitcoin', preco: criptos.bitcoin.brl ?? 0 },
+            { nome: 'Ethereum', preco: criptos.ethereum.brl ?? 0 },
+            { nome: 'Cardano', preco: criptos.cardano.brl ?? 0 },
+            { nome: 'Dogecoin', preco: criptos.dogecoin.brl ?? 0 },
+            { nome: 'Litecoin', preco: criptos.litecoin.brl ?? 0 },
+            { nome: 'Dólar', preco: cambio.usd ?? 0 },
+            { nome: 'Euro', preco: cambio.eur ?? 0 },
+            { nome: 'Libra', preco: cambio.gbp ?? 0 },            
         ];
 
         renderizar(moedas);
