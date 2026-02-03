@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif; 
+    background-image: url("https://loremflickr.com/1600/900/nature,landscape"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}    
+
+.caixa-maior {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 450px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+
+}
+
+.input-cidade {
+    height: 42px;
+    padding: 6px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    flex: 1;                  /* 🔥 faz o input crescer */
+    min-width: 0;       
+}
+
+.btn {
+    width: 42px;
+    height: 42px;    
+    padding: 0;
+    border: none;
+    background-color: #7c7c7c2b;    
+    border-radius: 50%;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background-color: #7c7c7c;
+    transform: scale(1.2);
+}   
+
+.img-btn {
+    width: 20px;
+    height: 20px;    
+}
+
+.caixa-media {
+
+}
